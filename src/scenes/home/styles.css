@@ -1,0 +1,47 @@
+.main-header {
+    /* background: #05abe0;
+    background: -moz-linear-gradient(-45deg, #05abe0 10%, #53cbf1 67%);
+    background: -webkit-linear-gradient(-45deg, #05abe0 10%,#53cbf1 67%);
+    background: linear-gradient(135deg, #05abe0 10%,#53cbf1 67%); */
+    color: #ffffff;
+    padding: 100px 0px;
+    font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+.main-header h1,h4 {
+    margin: 0px 0px 10px 0px;
+}
+
+article {
+    padding: 60px 0px;
+    font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border-bottom: #DDDDDD solid 1px;
+    text-align: center;
+}
+
+article p {
+    margin-bottom: 30px;
+}
+
+article.main p {
+    color: #888888;
+    font-size: 1.3em;
+}
+
+article.content p {
+    color: #000000;
+    font-size: 1.1em;
+}
+
+article header {
+    font-weight: bolder;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.button-white {
+    background: #ffffff;
+}
