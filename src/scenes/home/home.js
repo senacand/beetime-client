@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import MainHeader from './components/mainheader';
 
 export default class Home extends Component {
-    constructor(props){
-        super(props);
+
+    componentDidMount(){
+        document.title = "BeeTime"
     }
 
     render(){
@@ -22,7 +23,7 @@ export default class Home extends Component {
                             With BeeTime, you can acquire the class schedules of all members of your group or organization by giving them an easy to use form to select.
                         </p>
 
-                        <Link to='/register' className="button button-primary">Get Started</Link>
+                        <Link to='/create' className="button button-primary">Get Started</Link>
                     </article>
                     <article className="main">
                         <header>Made by Binusian, for Binusian</header>
@@ -42,7 +43,7 @@ export default class Home extends Component {
                         </p>
                         <p>
                             <strong>How does it work?</strong><br/>
-                            This site allows you to create a simple poll that allows Binusian to choose their class schedule.
+                            This site allows you to create a simple survey that allows Binusian friends or organization members to choose their class schedule. That way, you'll be able to know which time is the most empty
                         </p>
                         <p>
                             <strong>Can I use your API?</strong><br/>
@@ -52,7 +53,7 @@ export default class Home extends Component {
                             <strong>How do I get started?</strong><br/>
                             Just click the button below 😀
                         </p>
-                        <Link to='/register' className="button button-primary">Get Started</Link>
+                        <Link to='/create' className="button button-primary">Get Started</Link>
                     </article>
                 </div>
             </div>

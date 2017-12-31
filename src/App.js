@@ -3,6 +3,8 @@ import { BrowserRouter, Switch, Link, Route } from 'react-router-dom';
 // import logo from './logo.svg';
 import './styles.css';
 import Home from './scenes/home/home';
+import Create from './scenes/create/create';
+import Survey from './scenes/survey/survey';
 
 class App extends Component {
   render() {
@@ -23,9 +25,10 @@ class App extends Component {
           </header>
             <div>
               <Switch>
-                <Route path="/" exact component={Home} />
-                <Route path="/register" exact render={props => (<h1>Start Registration</h1>)} />
-                <Route path="/:id" component={start} />
+                <Route path="/" exact component={Home} title="Home" />
+                <Route path="/register" exact render={props => (<h1>Start Registration</h1>)} title="Register" />
+                <Route path="/create" exact component={Create} title="Create" />
+                <Route path="/:id" component={Survey} title="Survey" />
               </Switch>
             </div>
         </div>
