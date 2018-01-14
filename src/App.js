@@ -1,44 +1,65 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Link, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 // import logo from './logo.svg';
 import './styles.css';
 import Home from './scenes/home/home';
 import Create from './scenes/create/create';
 import Survey from './scenes/survey/survey';
+import Login from './scenes/login/login';
+import Header from './components/header/header';
 
 class App extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      user: null,
+      loadingUser: false,
+    }
+  }
+
+  componentDidMount(){
+    this.checkUserSession();
+    setInterval(this.checkUserSession, 1000*60);
+  }
+
+  checkUserSession = () => {
+    this.setState({
+      loadingUser: true,
+    })
+    fetch('/api/user', {
+      credentials: 'include'
+    })
+    .then((res) => res.json())
+    .then((res) => {
+      this.setState({
+        user: res,
+        loadingUser: false,
+      });
+    })
+    .catch(err => {
+      alert("Whoops... Something is off with the server.\nSome stuff may not load correctly.\n\nPlease try refreshing the page.");
+    })
+  }
+
   render() {
     return (
       <BrowserRouter>
-        <div className="app">
-          <header className="nav-header">
-            <div className="container nav-container">
-              <div className="logo">
-                <Link to="/"><span className="logo">🐝 BeeTime</span></Link>
-              </div>
-              <nav className="nav-menu">
-              <Link to='/login' className="button button-white" style={{
-                fontSize: '1em',
-              }}>Login</Link>
-              </nav>
-            </div>
-          </header>
-            <div>
-              <Switch>
-                <Route path="/" exact component={Home} title="Home" />
-                <Route path="/register" exact render={props => (<h1>Start Registration</h1>)} title="Register" />
-                <Route path="/create" exact component={Create} title="Create" />
-                <Route path="/:id" component={Survey} title="Survey" />
-              </Switch>
-            </div>
-        </div>
+        <section className="app">
+          <Header user={this.state.user} loading={this.state.loadingUser} />
+          <section id="content-body">
+            <Switch>
+              <Route path="/" exact component={Home} title="Home" />
+              <Route path="/register" exact render={props => (<h1>Start Registration</h1>)}/>
+              <Route path="/create" exact component={Create} />
+              <Route path="/login" exact component={Login} />
+              <Route path="/:id" component={Survey} title="Survey" />
+            </Switch>
+          </section>
+        </section>
       </BrowserRouter>
     );
   }
 }
-
-const start = ({match}) => (
-  <h1>{match.params.id}</h1>
-)
 
 export default App;

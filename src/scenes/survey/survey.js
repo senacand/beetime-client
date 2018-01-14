@@ -37,7 +37,7 @@ export default class Survey extends Component {
         const target = event.target;
         const name = target.name;
         let value = target.value;
-        if(name=='nim'){
+        if(name==='nim'){
             if(!/^[0-9]*$/.test(value)){
                 this.setState({
                     nim: this.state.nim,
@@ -74,17 +74,27 @@ export default class Survey extends Component {
             <div className="container main-survey">
                 <h3>{this.props.match.params.id}</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                Enter your identity below
+                <hr />
+                <h5>Enter your identity below</h5>
                 <label for="inputName">Name</label>
                 <input type="text" name="name" onChange={this.handleInputChange} className="u-full-width" placeholder="Your full name" value={this.state.name} id="inputName"/>
-                <label for="inputNIM">NIM</label>
-                <input type="text" name="nim" onChange={this.handleInputChange} className="u-full-width" placeholder="Nomor Induk Mahasiswa (Student ID Number)" value={this.state.nim} id="inputNIM"/>
-                <label for="inputProgram">Program</label>
-                <input type="text" name="program" onChange={this.handleInputChange} className="u-full-width" placeholder="Your program (Jurusan)" value={this.state.program} id="inputProgram"/>
-                <p><br/>Please choose the time where <strong>you have a class schedule</strong>.</p>
+                <div className="row">
+                    <div className="six columns">
+                        <label for="inputNIM">NIM</label>
+                        <input type="text" name="nim" onChange={this.handleInputChange} className="u-full-width" placeholder="Nomor Induk Mahasiswa (Student ID Number)" value={this.state.nim} id="inputNIM"/>
+                    </div>
+                    <div className="six columns">
+                        <label for="inputProgram">Program</label>
+                        <input type="text" name="program" onChange={this.handleInputChange} className="u-full-width" placeholder="Your program (Jurusan)" value={this.state.program} id="inputProgram"/>
+                    </div>
+                </div>
+                <hr />
+                <h5>Choose the time where <strong>you have a class schedule</strong>.</h5>
                 <div className="row">
                     {dayTable}
                 </div>
+                <p>Please <strong>double check</strong> and make sure you've checked the right time. After you submit, you cannot modify it.</p>
+                <input type="submit" className="button button-primary u-full-width" value="Submit" />
             </div>
         );
     }

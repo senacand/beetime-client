@@ -1,0 +1,44 @@
+.nav-header {
+    padding: 10px 0px;
+    background-color: #2b2b2b;
+    color: #ffffff;
+    font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-header a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 2em;
+}
+
+.nav-menu {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+}
+
+.nav-logo {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.button-dashboard {
+    background: none;
+    color: '#ffffff';
+}
+
+.button-dashboard:hover {
+    background: none;
+    color: '#ffffff' !important;
+}
+
+.button-dashboard:active {
+    background: none;
+    color: '#ffffff' !important;
+}
