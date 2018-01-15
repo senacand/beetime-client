@@ -4,8 +4,24 @@ import MainHeader from './components/mainheader';
 
 export default class Home extends Component {
 
+    constructor(props){
+        super(props);
+        this.state = {
+            map_url: '',
+        }
+    }
+
     componentDidMount(){
         document.title = "BeeTime"
+        navigator.geolocation.getCurrentPosition((position) => {
+            var latlon = position.coords.latitude + "," + position.coords.longitude;
+            var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=400x300&sensor=false&key=AIzaSyDU73aVpFA2A63ZdvAA3mkJH-g_JljUfpI";
+            this.setState({
+                map_url: img_url,
+            });
+        }, (error) => {
+
+        })
     }
 
     render(){
@@ -56,8 +72,11 @@ export default class Home extends Component {
                         </p>
                         <Link to='/create' className="button button-primary">Get Started</Link>
                     </article>
+                    <article className="content">
+                        <img src={this.state.map_url} className="u-full-width" />
+                    </article>
                 </div>
             </div>
         );
-    }
+    }   
 }
