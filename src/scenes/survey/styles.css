@@ -13,3 +13,13 @@ h6 {
     text-transform: uppercase;
     font-weight: bolder;
 }
+
+.schedule-box {
+    display: block;
+    border: 1px solid #c5c5c5;
+    border-radius: 5px;
+    margin-bottom: -1px;
+    text-align: center;
+    padding: 5px;
+    margin: 5px 0px;
+}

@@ -7,6 +7,9 @@ import Create from './scenes/create/create';
 import Survey from './scenes/survey/survey';
 import Login from './scenes/login/login';
 import Header from './components/header/header';
+import Dashboard from './scenes/dashboard/dashboard';
+import SurveyResult from './scenes/survey/result';
+import Register from './scenes/login/register';
 
 class App extends Component {
 
@@ -49,11 +52,13 @@ class App extends Component {
           <Header user={this.state.user} loading={this.state.loadingUser} />
           <section id="content-body">
             <Switch>
-              <Route path="/" exact component={Home} title="Home" />
-              <Route path="/register" exact render={props => (<h1>Start Registration</h1>)}/>
+              <Route path="/" exact component={Home} />
+              <Route path="/register" exact component={Register}/>
               <Route path="/create" exact component={Create} />
               <Route path="/login" exact component={Login} />
-              <Route path="/:id" component={Survey} title="Survey" />
+              <Route path="/dashboard" exact component={Dashboard} />
+              <Route path="/:id/result" component={SurveyResult} />
+              <Route path="/:id" component={Survey} />
             </Switch>
           </section>
         </section>

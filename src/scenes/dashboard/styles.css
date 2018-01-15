@@ -1,0 +1,28 @@
+.main-dashboard {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.survey-list {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.survey-list li {
+    margin: 0px;
+    padding: 0px;
+}
+
+.survey-list li a {
+    color: #000;
+    text-decoration: none;
+    border: 1px solid rgb(187, 187, 187);
+    display: block;
+    margin-bottom: -1px;
+    padding: 10px;
+}
+
+.survey-list li a:hover {
+    background: rgb(255, 246, 234);
+}

@@ -30,6 +30,7 @@ export default class Home extends Component {
                         <p>
                             We are also Binusian who have this same problem. We created this service to help us and other Binusian to solve the problem quick and easily.
                         </p>
+                        <img src={require('../../images/fulllogo.png')} alt="logo.png" width="150px" />
                     </article>
                     <article className="main">
                         <header>Tutorial</header>

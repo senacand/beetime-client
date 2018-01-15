@@ -29,7 +29,7 @@ export default class Header extends Component {
         <header className="nav-header">
             <div className="container nav-container">
               <section className="logo">
-                <Link to="/"><span className="logo"><span role="img" aria-label="Bee">🐝</span> BeeTime</span></Link>
+                <Link to="/"><span className="logo"><img src={require('../../images/logo.png')} alt="logo" height="24px" /> BeeTime</span></Link>
               </section>
               {loginMenu}
             </div>
